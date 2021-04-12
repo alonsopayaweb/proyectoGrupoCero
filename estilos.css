@@ -1,0 +1,35 @@
+/* Importamos una fuente de Google Fonts para ponerle al menu */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    background-color: #c9e5ff;
+    color: #434F5C;
+    margin: 0;
+    margin-bottom: 75px;
+}
+
+.navbar-brand {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.listaDescripcion {
+    list-style: none;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
