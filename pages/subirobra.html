@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contacto</title>
+        <title>Subir Obra</title>
         <link rel="shortcut icon" type="image/png" href="../images/paleta.png"/>
 
         <!-- Archivo de Bootstrap -->
@@ -41,7 +41,7 @@
                         <a class="nav-link" href="subirobra.html">Subir Obra</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="contact.html">Contacto</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -51,33 +51,42 @@
             </div>
         </nav>
 
-        <div class="container my-3">
+       <div class="container mt-3">
             <div class="row">
                 <div class="col-sm col-md-6">
                     <form>
-                        <h2>Contacto</h2>
+                        <h2>Registrarse obra</h2>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nombre y Apellido:</label>
-                            <input class="form-control" type="text" placeholder="Ingrese su Nombre Completo">
+                            <label for="exampleInputEmail1">Historia</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group">Descripción</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email:</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su Email">
+                            <label for="exampleInputPassword1">Nombre</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Asunto:</label>
-                            <input class="form-control" type="text" placeholder="Ingrese su Nombre Completo">
+                            <label for="exampleInputPassword1">Precio</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Mensaje:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Ingrese su Mensaje"></textarea>
-                          </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                            <label for="exampleInputPassword1">Técnica</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Subir fotos</button>
                     </form>
-
+                </div>
+                <div class="col-sm col-md-6 mt-5">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Otros:</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+                    </div>
                 </div>
             </div>
-        </div>
+       </div>
 
         <footer class="container-fluid mt-auto py-3 bg-primary text-white" style="bottom: 0;">
             <p class="d-flex justify-content-center text-center m-0">2021 © Todos los Derechos Reservados</p>
@@ -88,5 +97,3 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     </body>
 </html>
-
-
