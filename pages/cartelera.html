@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iniciar Sesión</title>
+        <title>Cartelera</title>
         <link rel="shortcut icon" type="image/png" href="../images/paleta.png"/>
 
         <!-- Archivo de Bootstrap -->
@@ -31,14 +31,14 @@
                         <a class="nav-link" href="gallery.html">Galería</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cartelera.html">Cartelera</a>
+                        <a class="nav-link" href="#">Cartelera</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Usuario
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Iniciar Sesión</a>
+                            <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
                             <a class="dropdown-item" href="register.html">Registrarse</a>
                         </div>
                     </li>
@@ -59,22 +59,25 @@
         <div class="container mt-3">
             <div class="row">
                 <div class="col-sm col-md-6">
-                    <form action="" onsubmit="return fncValidacion()">
-                        <h2>Iniciar Sesión</h2>
-                        <div class="form-group">
-                            <label for="usuario">Nombre de Usuario</label>
-                            <input class="form-control" type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario">
-                        </div>
-                        <div class="form-group">
-                            <label for="clave">Contraseña</label>
-                            <input class="form-control" type="password" id="clave" name="clave">
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Recordar Usuario</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                    </form>
+                    <h2>Cartelera de Cine</h2>
+                    <p>Nuestra sede organiza funciones de cine gratuitas para todo público.</p>
+                    <button type="submit" class="btn btn-primary pull-right mb-3" id="btnPelicula">Ver Cartelera</button>
+                </div>
+                <div class="col-sm col-md-12">
+                    <table id="tblPelicula" class="table table-striped table-dark table-responsive d-none">
+                        <thead>
+                            <tr>
+                                <td>Título</td>
+                                <td>Póster</td>
+                                <td>Género</td>
+                                <td>Sinopsis</td>
+                            </tr>
+                        </thead>
+                        <!-- Aqui en tbody colocamos la informacion que traemos de la API -->
+                        <tbody id="tbdPelicula" class="table text-light">
+                        </tbody>
+            
+                    </table>
                 </div>
             </div>
         </div>
@@ -87,22 +90,45 @@
         </footer>
 
         <!-- Script de Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
-        <!-- Script de Validación del Login -->
+        <!-- Script de Cartelera de Cine -->
 
         <script>
-            function fncValidacion() {
-                if(jQuery('#usuario').val() == "usuario1" && jQuery('#clave').val() == "clave1") {
-                    alert('¡Bienvenido!');
-                    document.location.href = '../index.html';
-                    return false;
-                } else {
-                    alert('Las credenciales son inválidas');
-                    return false;
-                }
+            function obtenerPelicula(id) {
+                var linkAPI = 'https://api.themoviedb.org/3/movie/';
+                var idPelicula = id;
+                var llaveApi = '?api_key=9baf6934936fccf6f1a544c9ee721700&language=es-ES';
+                var linkFinal = linkAPI + idPelicula + llaveApi;
+                jQuery.getJSON(linkFinal, 
+                function(data) {   
+                    jQuery('#tbdPelicula').append('<tr><td>'+data.original_title+'</td><td><img src="https://image.tmdb.org/t/p/w200/'+data.poster_path+'" class="img-rounded" /></td><td>'+data.genres[0].name+'</td><td>'+data.overview+'</td></tr>')
+                });
+                
             }
+    
+            jQuery(document).ready(function() {
+
+                //PONER LA TABLA COMO ESCONDIDA POR DEFECTO
+
+                jQuery('#btnPelicula').click(function() {
+                    $('#tblPelicula').removeClass('d-none'); //Eliminamos la clase display-none para mostrar la tabla
+                    $('#btnPelicula').addClass('d-none') //Ocultamos el botón de película
+                    obtenerPelicula(550);
+                    obtenerPelicula(238);
+                    obtenerPelicula(129);
+                    obtenerPelicula(680);
+                    obtenerPelicula(423);
+                    obtenerPelicula(8587);
+                    obtenerPelicula(28);
+                    obtenerPelicula(185);
+                    obtenerPelicula(694);
+                    obtenerPelicula(98);
+                    
+                });
+            });
+            
         </script>
 
     </body>
