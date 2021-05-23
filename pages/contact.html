@@ -1,92 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contacto</title>
-        <link rel="shortcut icon" type="image/png" href="../images/paleta.png"/>
 
-        <!-- Archivo de Bootstrap -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="shortcut icon" type="image/png" href="../images/paleta.png" />
 
-        <!-- CSS Propio -->
-        <link rel="stylesheet" href="../estilos.css">
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="../index.html">🎨 Grupo Cero</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../index.html">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Galería</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Usuario
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
-                            <a class="dropdown-item" href="register.html">Registrarse</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="subirobra.html">Subir Obra</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar Obra" aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+    <!-- Archivo de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <!-- CSS Propio -->
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="../index.html">🎨 Grupo Cero</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Galería</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Usuario
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="login.html">Iniciar Sesión</a>
+                        <a class="dropdown-item" href="register.html">Registrarse</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="subirobra.html">Subir Obra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar Obra" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-sm col-md-6">
+                <form action="http://www.colex.cl/duoc/cargaData.php" method="POST" id="formulario">
+
+                    <h1>Contacto</h1>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre"
+                            placeholder="Inserte su nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" name="correo"
+                            placeholder="Inserte su correo">
+                    </div>
+                    <div class="form-group">
+                        <label for="documento">Documento</label>
+                        <input type="text" class="form-control" id="documento" name="documento"
+                            placeholder="Inserte su RUT">
+                    </div>
+                    <div class="form-group">
+                        <label for="documento">Pasaporte</label>
+                        <input type="text" class="form-control" id="pasaporte" name="documento"
+                            placeholder="Inserte su pasaporte">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" class="form-control" id="telefono" name="telefono"
+                            placeholder="Inserte su Teléfono">
+                    </div>
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" name="ciudad"
+                            placeholder="Inserte su Ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label for="comentario">Comentario</label>
+                        <input type="text" class="form-control" id="comentario" name="comentario"
+                            placeholder="Inserte su comentario">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" id="url" name="url" value="https://www.google.cl">
+                    </div>
+                    <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                    <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+                    <div id="error" class="alert alert-danger mt-3" role="alert"></div>
                 </form>
             </div>
-        </nav>
-
-        <div class="container my-3">
-            <div class="row">
-                <div class="col-sm col-md-6">
-                    <form>
-                        <h2>Contacto</h2>
-                        <div class="form-group">
-                            <label for="nombre">Nombre y Apellido:</label>
-                            <input class="form-control" type="text" id="nombre" placeholder="Ingrese su Nombre Completo" name="nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="correo">Email:</label>
-                            <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="Ingrese su Email" name="correo">
-                        </div>
-                        <div class="form-group">
-                            <label for="asunto">Asunto:</label>
-                            <input class="form-control" type="text" id="asunto" placeholder="Ingrese su Nombre Completo" name="asunto">
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje:</label>
-                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Ingrese su Mensaje" name="mensaje"></textarea>
-                          </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-
-                </div>
-            </div>
         </div>
+    </div>
 
-        <footer class="container-fluid mt-auto py-3 bg-primary text-white" style="bottom: 0;">
-            <p class="d-flex justify-content-center text-center m-0">2021 © Todos los Derechos Reservados</p>
-        </footer>
+    <footer class="container-fluid mt-auto py-3 bg-primary text-white" style="bottom: 0;">
+        <p class="d-flex justify-content-center text-center m-0">2021 © Todos los Derechos Reservados</p>
+    </footer>
 
-        <!-- Script de Bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    </body>
+    <!-- Script de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#error").hide();
+
+            $("#formulario").submit(function () {
+                var mensaje = "";
+
+                var string = $("#documento").val();
+                var guion = new RegExp('-');
+                var resultado = guion.test(string);
+
+                if ($("#nombre").val().trim().length == 0) {
+                    mensaje = "El nombre está en blanco.";
+                }
+
+                if ($("#correo").val().trim().length == 0) {
+                    mensaje = "El correo está en blanco.";
+                }
+
+                if ($("#ciudad").val().trim().length == 0) {
+                    mensaje = "Por favor, ingrese una ciudad valida.";
+                }
+
+                if ($("#comentario").val().length <= 50) {
+                    mensaje = "Por favor ingrese al menos 50 caracteres en su comentario.";
+                }
+
+                if ($("#documento").val().trim().length == 0 && $("#pasaporte").val().trim().length == 0) {
+                    mensaje = "Por favor ingrese un numero de documento o pasaporte valido.";
+                }
+                else if ($("#pasaporte").val().length >= 1 && $("#documento").val().trim().length >= 1) {
+                    mensaje = "Por favor solo ingrese o un numero de documento o un numero de pasaporte.";
+
+                }
+                else if (resultado == false && $("#pasaporte").val().trim().length == 0) {
+                    mensaje = "Por favor ingrese un RUT válido";
+                }
+
+                if (mensaje != "") {
+                    $("#error").html(mensaje);
+                    $("#error").show();
+                    event.preventDefault();
+                }
+            })
+        })
+    </script>
+</body>
+
 </html>
-
-
